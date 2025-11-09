@@ -1,0 +1,698 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #E6F2FF; /* Biru muda terang */
+}
+
+:root {
+    --blue-light: #A6D6FF; /* Biru muda terang untuk latar belakang dan CTA */
+    --blue-dark: #0066CC;  /* Biru gelap untuk header dan elemen utama */
+    --green: #4CAF50; /* Hijau untuk elemen penting seperti tombol */
+    --white: #ffffff; /* Putih untuk latar belakang dan tombol */
+    --bg-card: #ffffff; /* Latar belakang putih untuk kartu */
+    --text-dark: #333333; /* Teks gelap untuk deskripsi */
+    --text-light: #ffffff; /* Teks terang untuk header dan tombol */
+    --shadow: 0 10px 24px rgba(0, 0, 0, 0.08); /* Shadow untuk elemen */
+}
+
+header {
+    background: var(--blue-dark); /* Biru gelap untuk header */
+    color: var(--white); /* Warna putih untuk teks */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.3s ease-in-out;
+    padding: 15px 0;
+}
+
+header.scrolled {
+    background: var(--blue-light); /* Gradasi biru terang saat scroll */
+    color: var(--text-dark); /* Teks gelap saat scroll */
+}
+
+header .container {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo img {
+    max-width: 120px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--white); /* Warna putih untuk link */
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+header.scrolled nav ul li a {
+    color: var(--text-dark); /* Teks gelap saat scroll */
+}
+
+header .login-btn {
+    background-color: var(--green); /* Hijau untuk tombol login */
+    color: var(--white);
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+}
+
+header .login-btn:hover {
+    background-color: #388E3C; /* Lebih gelap saat hover */
+}
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 100px 10%;
+    background: var(--blue-light); /* Gradasi biru terang */
+    color: var(--white);
+}
+
+.hero-content {
+    width: 50%;
+    padding-right: 50px;
+    text-align: left;
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: left;
+}
+
+.cta-btn {
+    background-color: var(--white); /* Putih untuk tombol CTA */
+    color: var(--blue-dark); /* Biru gelap untuk teks */
+    padding: 12px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.cta-btn:hover {
+    background-color: var(--blue-dark); /* Biru gelap saat hover */
+    color: var(--white); /* Ubah teks jadi putih */
+}
+
+.cta-btn:active {
+    background-color: #FF8A00;
+    color: white;
+}
+
+.hero-image {
+    width: 50%;
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 10%;
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: none;
+    margin-left: 20%;
+}
+
+.hero-icons {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-top: 80px;
+}
+
+.icon-item {
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.icon-item img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.icon-item p {
+    font-size: 1rem;
+    margin: 0;
+}
+
+section {
+    padding: 40px 0;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2rem;
+}
+
+
+.features {
+    padding: 72px 24px;
+    background-color: #96cbfa; /* Biru muda lebih terang dan berbeda sedikit */
+}
+
+.features__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.features__head {
+  text-align: center;
+  color: var(--white); /* Warna putih untuk teks */
+  margin-bottom: 28px;
+}
+
+.features__head h2 {
+  font-size: 2.1rem;
+  line-height: 1.2;
+  letter-spacing: .2px;
+}
+
+.features__head p {
+  margin-top: 6px;
+  opacity: .9;
+}
+
+.features__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+/* Card Styling */
+.fcard {
+    background: var(--white); /* Putih untuk latar belakang kartu */
+    color: var(--blue-dark); /* Biru gelap untuk teks */
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+    padding: 22px;
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.fcard:hover {
+    background-color: var(--blue-dark); /* Biru gelap saat hover */
+    color: var(--white); /* Teks jadi putih saat hover */
+}
+
+.fcard__title {
+    font-size: 1.05rem;
+    color: inherit;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+.fcard__desc {
+    font-size: .92rem;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+.fcard__icon {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+    margin: 6px auto 12px;
+}
+
+.fcard--highlight {
+  background:
+    radial-gradient(400px 240px at 70% 10%, rgba(255,255,255,.18), transparent 60%),
+    linear-gradient(135deg, rgba(255,255,255,.08), rgba(0,0,0,.08));
+  color:#fff;
+  backdrop-filter: blur(2px);
+}
+
+.fcard--highlight .fcard__title {
+  color: #fff;
+}
+
+.fcard--highlight .fcard__desc {
+  color: rgba(255,255,255,.9);
+}
+
+@media (max-width: 992px){
+  .features__grid{ grid-template-columns: repeat(2,1fr); }
+}
+@media (max-width: 640px){
+  .features{ padding: 56px 16px; }
+  .features__grid{ grid-template-columns: 1fr; }
+  .fcard{ padding: 18px 16px 22px; }
+}
+
+.promo {
+    padding: 80px 20px;
+    background-color: var(--blue-light); /* Biru terang solid */
+    color: white;
+}
+
+.promo h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.promo p {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 60px;
+}
+
+.promo-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.promo-card {
+    background: var(--white); /* Putih untuk latar belakang kartu */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+    transition: transform 0.3s ease;
+    min-height: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.promo-card:hover {
+    transform: translateY(-8px);
+}
+
+.promo-card img {
+    width: 80%;
+    max-width: 220px;
+    margin-bottom: 15px;
+    object-fit: contain;
+}
+
+.promo-card h3 {
+    font-size: 1.5rem;
+    color: var(--text-dark); /* Biru gelap untuk judul */
+    margin-bottom: 15px;
+}
+
+.promo-card p {
+    font-size: 1rem;
+    color: #777;
+    margin-bottom: 20px;
+}
+
+.promo-card .cta-btn {
+    background-color: var(--green); /* Hijau untuk tombol CTA */
+    color: white;
+    padding: 12px 25px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    margin-top: 40px;
+}
+
+.promo-card .cta-btn:hover {
+    background-color: #388E3C; /* Hijau lebih gelap saat hover */
+    color: white;
+}
+
+.promo-label {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #388E3C; /* Hijau lebih gelap untuk label */
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.promo-card .promo {
+    background-color: #388E3C; /* Hijau untuk promo */
+}
+
+.promo-card .new {
+    background-color: var(--blue-light); /* Biru terang untuk promo baru */
+}
+
+@media (max-width: 992px) {
+    .promo-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .promo-cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+.store {
+    padding: 72px 24px;
+    background-color: #96cbfa;
+}
+
+.store h2 {
+    text-align: center;
+    color: var(--white); /* Warna putih untuk teks */
+    margin-bottom: 40px;
+    font-size: 2rem;
+}
+
+.store-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.item {
+    background: var(--white); /* Putih untuk latar belakang item */
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.item:first-child {
+    grid-column: span 2;
+}
+
+.item img {
+    width: 70%;
+    max-width: 180px;
+    height: auto;
+    margin: 0 auto 10px auto;
+    object-fit: contain;
+    display: block;
+}
+
+.item p {
+    margin: 8px 0;
+    color: #333;
+    font-size: 1rem;
+}
+
+.add-to-cart, .category-link {
+    display: inline-block;
+    background-color: var(--white); /* Putih untuk tombol */
+    color: var(--blue-dark); /* Biru gelap untuk tombol */
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: 2px solid var(--blue-dark);
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    margin-top: 12px;
+}
+
+.category-button {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 15px;
+}
+
+.category-link:hover, .add-to-cart:hover {
+    background-color: var(--blue-dark); /* Biru gelap saat hover */
+    color: var(--white); /* Teks jadi putih saat hover */
+    border-color: var(--white); /* Ubah border menjadi putih saat hover */
+}
+
+@media (max-width: 992px) {
+    .store-items {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .store-items {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .store-items {
+        grid-template-columns: 1fr;
+    }
+}
+
+.articles {
+    padding: 80px 20px;
+    background-color: var(--blue-light); /* Biru terang solid */
+    color: white;
+}
+
+.articles h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.articles p {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+}
+
+.article-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    justify-content: center;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.article-card {
+    background: var(--white); /* Putih untuk latar belakang kartu */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+    transition: transform 0.3s ease;
+    min-height: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.article-card .cta-btn {
+    background-color: var(--blue-dark); /* Biru gelap untuk tombol CTA */
+    color: white;
+    padding: 12px 25px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+}
+
+.article-cards .cta-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.article-card:hover {
+    transform: translateY(-8px);
+}
+
+.article-card img {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    margin-bottom: 25px;
+    object-fit: contain;
+}
+
+.article-card img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    margin-bottom: 15px;
+    object-fit: contain;
+}
+
+.article-card h3 {
+    font-size: 1.5rem;
+    color: var(--text-dark); /* Biru gelap untuk judul */
+    margin-bottom: 15px;
+}
+
+.article-card p {
+    font-size: 1rem;
+    color: #777;
+    margin-bottom: 20px;
+}
+
+.article-card .cta-btn {
+    background-color: var(--blue-dark); /* Biru gelap untuk tombol CTA */
+    color: white;
+    padding: 12px 25px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    margin-top: 30px;
+}
+
+.article-card .cta-btn:hover {
+    background-color: var(--blue-light); /* Biru terang saat hover */
+    color: white;
+}
+
+@media (max-width: 992px) {
+    .article-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .article-cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+.footer {
+    background-color: var(--blue-dark); /* Biru gelap solid */
+    color: var(--white); /* Teks putih */
+    padding: 60px 10%;
+    font-family: Arial, sans-serif;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px;
+}
+
+.footer h3 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer ul li {
+  margin-bottom: 10px;
+}
+
+.footer ul li a {
+  color: var(--white); /* Putih untuk teks link */
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer ul li a:hover {
+  color: var(--text-dark); /* Gelap saat hover */
+}
+
+.download-box {
+  background-color: var(--white); /* Putih untuk kotak download */
+  color: var(--blue-dark); /* Biru gelap untuk teks */
+  border-radius: 12px;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 280px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+  margin-top: 20px;
+  transition: transform 0.3s ease;
+}
+
+.download-box:hover {
+  transform: translateY(-3px);
+}
+
+.download-box img {
+  width: 40px;
+  height: 40px;
+}
+
+.download-box p {
+  font-weight: bold;
+  font-size: 0.9rem;
+  line-height: 1.3;
+}
+
+.social-icons {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.social-icons img {
+  width: 32px;
+  height: 32px;
+  transition: transform 0.3s ease;
+}
+
+.social-icons img:hover {
+  transform: scale(1.1);
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 50px;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  padding-top: 20px;
+  font-size: 0.9rem;
+}
